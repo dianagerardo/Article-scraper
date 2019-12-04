@@ -1,0 +1,28 @@
+{
+  "name": "article-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dianagerardo/Article-scraper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.3.16",
+    "morgan": "^1.9.1"
+  },
+  "bugs": {
+    "url": "https://github.com/dianagerardo/Article-scraper/issues"
+  },
+  "homepage": "https://github.com/dianagerardo/Article-scraper#readme"
+}
