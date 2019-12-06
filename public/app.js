@@ -4,13 +4,13 @@ $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").append(`<p data-id='${data[i]._id}'> ${data[i].title} <br /> ${data[i].link} <br /> <img style='width:100%' src='${data[i].image}' <br /> ${data[i].summary}</p>`);
+    $("#articles").append(`<h2 data-id='${data[i]._id}'> ${data[i].title} </h2> <br/>  <img style='width:50%' src='${data[i].image}' <br /> <p>${data[i].summary}</p> </br> <a href='${data[i].link}'>${data[i].link}</a> <hr>`);
   }
 });
 
 
 // Whenever someone clicks a p tag
-$(document).on("click", "p", function() {
+$(document).on("click", "h2", function() {
   // Empty the notes from the note section
   $("#comments").empty();
   // Save the id from the p tag
@@ -27,9 +27,9 @@ $(document).on("click", "p", function() {
       // The title of the article
       $("#comments").append("<h2>" + data.title + "</h2>");
       // An input to enter a new title
-      $("#comments").append("<input id='titleinput' name='title' >");
+      $("#comments").append("<input id='titleinput' name='title' placeholder='Comment Title'>");
       // A textarea to add a new note body
-      $("#comments").append("<textarea id='bodyinput' name='body'></textarea>");
+      $("#comments").append("<textarea id='bodyinput' name='body' placeholder='Write comment here'></textarea>");
       // A button to submit a new note, with the id of the article saved to it
       $("#comments").append("<button data-id='" + data._id + "' id='savecomment'>Save Comments</button>");
 

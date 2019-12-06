@@ -1,52 +1,82 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>Article Scraping</title>
     <style>
-      body { background-color:aliceblue }
-      #wrapper {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5%;
-      }
-      #articles {
-        display: inline-block;
-        overflow: auto;
-        width: 60%;
-        height: 700px;
-      }
-      #comments {
-        float: right;
-        width: 30%;
-      }
-      textarea, input {
-        display: block;
-        width: 100%;
-        background-color: aliceblue;
-      }
-      input {
-        height: 36px;
-        font-size: 24px;
-      }
-      textarea {
-        height: 200px;
-        font-size: 18px;
-      }
+        body {
+            background-color: aliceblue
+        }
+
+        .jumbotron {
+            border-bottom-style: solid;
+            border-bottom-width: thick;
+            border-bottom-color: black;
+        }
+
+        #wrapper {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 5%;
+        }
+
+        #articles {
+            display: inline-block;
+            overflow: auto;
+            width: 60%;
+            height: 700px;
+        }
+
+        #comments {
+            float: right;
+            width: 30%;
+        }
+
+        textarea,
+        input {
+            display: block;
+            width: 100%;
+            background-color: aliceblue;
+        }
+
+        input {
+            height: 36px;
+            font-size: 24px;
+        }
+
+        textarea {
+            height: 200px;
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 20px;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="wrapper">
-      <h1>NPR<span><div id="npr-logo"><img style="width:100px" src="https://media.npr.org/chrome_svg/npr-logo.svg" alt="NPR logo"></div></span></h1>
-      
-      <h2><i>Leave comments on the articles</i></h2>
-      <div id="articles"></div>
-      
-      
-      <div id="comments"></div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1><span>
+                        <div id="npr-logo"><img style="width:100px" src="https://media.npr.org/chrome_svg/npr-logo.svg"
+                                alt="NPR logo"></div>
+                    </span>NPR Mongo Scraper</h1>
+        
+                <h2><i>Leave comments on the articles</i></h2>
+            </div>
+        </div>
+        
+        <div id="articles"></div>
+
+
+        <div id="comments"></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
