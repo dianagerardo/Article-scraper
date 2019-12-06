@@ -88,6 +88,10 @@ app.get("/scrape", function (req, res) {
                 });
         });
 
+        app.get("/", function(req, res) {
+            res.json(path.join(__dirname, "public/index.html"));
+          });
+
         // Route for getting all Articles from the db
         app.get("/articles", function (req, res) {
             // Grab every document in the Articles collection
