@@ -29,7 +29,7 @@ app.use(express.static("public"));
 // Connect to the Mongo DB
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/articleGenerator_DB"
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Each scraped article should be saved to your application database. At a minimum, the app should scrape and display the following information for each article:
 
