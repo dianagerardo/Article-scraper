@@ -1,12 +1,26 @@
 // Grab the articles as a json
-$.getJSON("/articles", function(data) {
+$("button").on("click", function() {
+  // Empty the notes from the note section
+
+  // Now make an ajax call for the Article
+  $.ajax({
+    method: "GET",
+    url: "/scrape/"
+  })
+    .then(function(data) {
+      console.log(data);
+      $.getJSON("/articles", function(data) {
     
-  // For each one
-  for (var i = 0; i < data.length; i++) {
-    // Display the apropos information on the page
-    $("#articles").append(`<h2 data-id='${data[i]._id}'> ${data[i].title} </h2> <br/>  <img style='width:50%' src='${data[i].image}' <br /> <p>${data[i].summary}</p> </br> <a href='${data[i].link}'>${data[i].link}</a> <hr>`);
-  }
-});
+        // For each one
+        for (var i = 0; i < data.length; i++) {
+          // Display the apropos information on the page
+          $("#articles").append(`<h2 data-id='${data[i]._id}'> ${data[i].title} </h2> <br/>  <img style='width:50%' src='${data[i].image}' <br /> <p>${data[i].summary}</p> </br> <a href='${data[i].link}'>${data[i].link}</a> <hr>`);
+        }
+      });
+      
+    })
+  });
+
 
 
 // Whenever someone clicks a p tag
